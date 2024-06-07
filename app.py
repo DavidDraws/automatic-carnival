@@ -105,8 +105,8 @@ def user_input(user_question):
 
 
 def main():
-    st.set_page_config("Chat with course made chatbot")
-    st.header("Converse with this chatbot made on course information")
+    st.set_page_config("CourseBot")
+    st.header("Input PDF file and have an educational conversation!")
 
 
 
@@ -124,8 +124,8 @@ def main():
 
     with st.sidebar:
         st.title("Menu:")
-        pdf_docs= st.file_uploader("Upload course data and click the button format must be PDF")
-        if st.button("Submit"):
+        pdf_docs= st.file_uploader("Upload course information to be used for the conversation, file format must me PDF")
+        if st.button("Submit Course Information"):
             with st.spinner("Working"):
                 raw_text = get_pdf_info(pdf_docs)
                 text_chunks = get_pdf_chunks(raw_text)
